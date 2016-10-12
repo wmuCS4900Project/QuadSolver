@@ -1,0 +1,7 @@
+C programming standard and style:
+
+The C programming standars we have chosen to use for this project can be found here:
+http://homepages.inf.ed.ac.uk/dts/pm/Papers/nasa-c-style.pdf
+
+This is NASA's C standards for programming in C.  It has a lot of good exsamples and explaintions.
+
