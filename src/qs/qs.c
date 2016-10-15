@@ -1,34 +1,41 @@
+/* This program will read floats from command line inputs or read from a file
+in order to solve the quadratic equation. Inputs are taken in float form and 
+calculated using double precesion to IEEE standard.*/
+
 #include <stdio.h>
 #include <math.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 
-/*Read in inputs while there are inputs in file given in command line input */
-
+//function definitions
 int takeInputs();
 int runFile();
 char *remove_newline(char *s);
 
-
-int main(int argc, char * argv[]){
+int 
+main(int argc, char * argv[])
+{
 	
 	if(argc < 2){
-		takeInputs();
-		//printf("No filename included\n");
-		//return -1;
-	}
-	else{
-		char * f = argv[1];
-		if(runFile(f) == 0) return 0;
+		if(takeInputs() == 0) return 0;
 		else return -1;
 	}
-
+	else if(argc == 2){
+		char * f = argv[1];
+		if(runFile(f) == 0) return 0; 
+		else return -1;
+	}
+	else{
+		printf("Incorrect number of inputs. Please read readme for useage.\n");
+	}
 	
-	return 0;
+	return -2; //shouldn't reach this point
 }
 
-int takeInputs(){
+int 
+takeInputs()
+{
 	char s[100];
 	char * p = s;
 	float a;
@@ -62,9 +69,9 @@ int takeInputs(){
 }
 
 
-
-int runFile(char * fname){
-
+int 
+runFile(char * fname)
+{
 
 	FILE * fp;
 
@@ -93,7 +100,8 @@ int runFile(char * fname){
 
 }
 
-char *remove_newline(char *s)
+char *
+remove_newline(char *s)
 {
     int len = strlen(s);
 
