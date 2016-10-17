@@ -10,7 +10,7 @@ calculated using double precesion to IEEE standard.*/
 
 //function definitions
 int takeInputs();
-int runFile();
+int runFile(char * fname);
 char *remove_newline(char *s);
 
 int 
