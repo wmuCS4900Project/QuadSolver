@@ -16,23 +16,36 @@ char *remove_newline(char *s);
 int 
 main(int argc, char * argv[])
 {
-	
-	if(argc < 2){
+	//Inputs from command line
+	if(argc < 2)
+      {//Start loop here instead of in takeInput
 		if(takeInputs() == 0) return 0;
+        
 		else return -1;
-	}
-	else if(argc == 2){
+	  }
+    //Inputs from file
+	else if(argc == 2)
+      {
 		char * f = argv[1];
 		if(runFile(f) == 0) return 0; 
 		else return -1;
-	}
-	else{
-		printf("Incorrect number of inputs. Please read readme for useage.\n");
-	}
+	  }
+    //Input error
+	else
+      {
+        printf("Incorrect number of inputs. Please read readme for useage.\n");
+	  }
 	
 	return -2; //shouldn't reach this point
 }
 
+/*
+ takeInputs function is called in main. It gains input from 
+ the command lineutilizing a char array and fgets. This is 
+ how we get A, B, and C. These floats will then be validated 
+ by an outside function. Once validated the float will be 
+ send to qsolv.
+ */
 int 
 takeInputs()
 {
@@ -42,8 +55,8 @@ takeInputs()
 	float b;
 	float c;
 
-
-	for(;;){
+	for(;;)
+      {
 
 		printf("Enter your floats for the quadratic equation: \n");
 		printf("A: ");
@@ -62,9 +75,10 @@ takeInputs()
 		c = atof(p);
 
 		printf("found %5.5f %5.5f %5.5f \n",a,b,c);
-		//call qsolv
+        //call validate(? may be moved to main)
+		//call qsolv(? may be moved to main)
 
-	}
+	  }
 	return 0;
 }
 
@@ -72,16 +86,16 @@ takeInputs()
 int 
 runFile(char * fname)
 {
-
 	FILE * fp;
-
+    
 	if(!(fp = fopen(fname,"r"))) return -1;
 	
 	char * token;
 	float a, b, c;
 	char readin[256];
 
-	while(fgets(readin,sizeof(readin),fp)){
+	while(fgets(readin,sizeof(readin),fp))
+    {
 		token = strtok(readin," ");
 		a = atof(token);
 		token = strtok(NULL," ");
@@ -90,8 +104,8 @@ runFile(char * fname)
 		c = atof(token);
 
 		printf("found %5.5f %5.5f %5.5f \n",a,b,c);
-
-		//call qsolv
+        //call validate(? may be moved to main)
+        //call qsolv(? may be moved to main)
 	}
 
 	fclose(fp);
@@ -105,8 +119,8 @@ remove_newline(char *s)
 {
     int len = strlen(s);
 
-    if (len > 0 && s[len-1] == '\n')  // if there's a newline
-        s[len-1] = '\0';          // truncate the string
+    if (len > 0 && s[len-1] == '\n') s[len-1] = '\0';
+            // if there's a newline, truncate the string
 
     return s;
 }
