@@ -8,7 +8,7 @@
 int validateInput(double digit, char* token, char* end);
 int validateDigits(char* strDigits);
 
-/*Read in inputs while there are inputs in file given in command line input */
+/* Read in inputs while there are inputs in file given in command line input */
 int main(int argc, char * argv[]){
 	
 	if(argc < 2){
@@ -56,7 +56,6 @@ int main(int argc, char * argv[]){
 	}
 
 	fclose(fp);
-	
 	return 0;
 }
 

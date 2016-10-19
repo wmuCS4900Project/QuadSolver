@@ -1,4 +1,4 @@
-/**
+/*
 * Validate that the input is actually a float. 
 * @param numAsString -- the char* that is being
 * converted to a double
