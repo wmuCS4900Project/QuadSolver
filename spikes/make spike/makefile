@@ -1,5 +1,6 @@
+#root makefile
+
 SUBDIRS = qsolv input output formatting validation qs
-CLEAN = make clean
 OUTPUT = output/output.o
 INPUT = input/input.o
 FORMAT = formatting/formatting.o
@@ -14,9 +15,4 @@ main:
 all:
 	for dir in $(SUBDIRS); do \
 		$(MAKE) -C $$dir; \
-	done
-
-clean:
-	for dir in $(SUBDIRS); do \
-		$(CLEAN) -C $$dir; \
 	done
