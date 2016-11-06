@@ -1,0 +1,13 @@
+Rounding off numbers
+
+Use a doubles in the calutations not floats.
+
+
+links:
+http://stackoverflow.com/questions/2422712/c-rounding-integer-division-instead-of-truncating
+
+rounding with floats:
+	http://stackoverflow.com/questions/1343890/rounding-number-to-2-decimal-places-in-c
+
+functions in math.h for rounding:
+	http://www.gnu.org/software/libc/manual/html_node/Rounding-Functions.html
