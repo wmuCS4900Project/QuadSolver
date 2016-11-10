@@ -2,6 +2,7 @@
 
 MAKE = make all
 CLEAN = make clean
+TEST = make test
 SUBDIRS = src
 INSDIR = install
 INS = install/qsolver
@@ -30,4 +31,9 @@ clean:
 	rm -rf $(INS)
 	for dir in $(SUBDIRS); do \
 		$(CLEAN) -C $$dir; \
+	done
+
+test:
+	for dir in $(SUBDIRS); do \
+		$(TEST) -C $$dir; \
 	done
