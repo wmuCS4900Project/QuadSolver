@@ -5,7 +5,8 @@
 * @param numAsString -- the char* that is being
 * converted to a double
 */
-int validateInput(char* numAsString) {
+int 
+validateInput(char* numAsString) {
 	char* end;
 	double num = strtod(numAsString, &end);
 	int valid = 0;
@@ -23,14 +24,19 @@ int validateInput(char* numAsString) {
 * sure a number is being supplied
 * char* strDigits--String containing a number
 **/
-int validateDigits(char* strDigits) {
-	for(int i=0; i < sizeof(strDigits); i++) {
-		//printf("%c", strDigits[i]);
+int 
+validateDigits(char* strDigits) {
+	//for(int i=0; i <= sizeof(strDigits); i++) {
+	int i = 0;
+	while(strDigits[i] != '\0'){
+		//printf("%c\n", strDigits[i]);
+		printf("%d\n",i);
 		if (strDigits[i] == ' ')
 			return 0;
 		if (isdigit(strDigits[i]) == 0 && strDigits[i] != '.' && strDigits[i] != '\0') {
 			return -1;
 		}
+		i++;
 	}
 	return 0;
 }
