@@ -1,4 +1,4 @@
-#include "../cunit/cunit.h"
+#include "../../cunit/cunit.h"
 #include "../includes/qsstruct.h"
 #include <stdio.h>
 #include <stdlib.h>

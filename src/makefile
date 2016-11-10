@@ -9,7 +9,10 @@ QS = qs/qs.o
 VALID = validation/validation.o
 
 
-main:
+test:
+	for dir in $(SUBDIRS); do \
+		$(TEST) -C $$dir; \
+	donemain:
 	gcc -g -o qsolver $(QS) $(QSOLV) $(VALID) $(FORMAT) $(INPUT) $(OUTPUT)
 
 all:

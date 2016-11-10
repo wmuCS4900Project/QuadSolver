@@ -35,4 +35,5 @@ clean:
 
 test:
 	for dir in $(SUBDIRS); do \
-		$(MAKE)
+		$(TEST) -C $$dir; \
+	done
