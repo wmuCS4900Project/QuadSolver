@@ -7,63 +7,59 @@
  by an outside function. Once validated the float will be 
  send to qsolv.
  */
-int 
-takeInputs()
+qInputs 
+takeInputs(char* readin)
 {
-	char readin[256];
 	double a;
 	double b;
 	double c;
 	char* end;
 
+	qInputs inputs;
 	char strA[256/3];
 	char strB[256/3];
 	char strC[256/3];
 	char strValidate[256/3]; // Should always be empty
 		
-	printf("Please enter a,b, and c separated by spaces\n (i.e., <a> <b> <c>)\n");
 
-	while(fgets(readin,sizeof(readin), stdin)){
-		memset(strA, ' ', 256/3);
-		memset(strB, ' ', 256/3);
-		memset(strC, ' ', 256/3);
-		memset(strValidate, ' ', 256/3);
+	memset(strA, ' ', 256/3);
+	memset(strB, ' ', 256/3);
+	memset(strC, ' ', 256/3);
+	memset(strValidate, ' ', 256/3);
 
-		sscanf(readin, "%s %s %s %s", strA, strB, strC, strValidate);
-		
-		// More than 3 parameters given
-		 if (strValidate[0] != ' ') {
-		 	// Error
-		 	printf("Error: No many arguments supplied. Please try again: \n");
-		 	continue;
-		 }
+	sscanf(readin, "%s %s %s %s", strA, strB, strC, strValidate);
+	
+	// More than 3 parameters given
+	 if (strValidate[0] != ' ') {
+	 	// Error
+		inputs.errorCode = -2;
+		return inputs;
+	 }
 
-		// Quit command
-		if(strA[0] == 'q' ) {
-			printf("Quitting...\n");
-			break;
-		}
-
-		a = strtod(strA, &end);
-		if(validateInput(strA) != 0)
-			continue;
-
-		b = strtod(strB, &end);
-		if(validateInput(strB) != 0)
-			continue;
-
-		c = strtod(strC, &end);
-		if(validateInput(strC) != 0)
-			continue;
-
-		printf("Running qsolve for input a=%lf b=%lf c=%lf... \n", a, b, c);
-		//call qsolv
-
-		// continue loop
-		printf("Please enter a,b, and c separated by spaces\n (i.e., <a> <b> <c>)\n");
-
+	a = strtod(strA, &end);
+	if(validateInput(strA) != 0) {
+		inputs.errorCode = -1;
+		return inputs;
 	}
-	return 0;
+
+	b = strtod(strB, &end);
+	if(validateInput(strB) != 0) {
+		inputs.errorCode = -1;
+		return inputs;
+	}
+
+	c = strtod(strC, &end);
+	if(validateInput(strC) != 0) {
+		inputs.errorCode = -1;
+		return inputs;
+	}
+
+	inputs.a = a;
+	inputs.b = b;
+	inputs.c = c;
+
+	// Return to main to run qsolv
+	return inputs;
 }
 
 /*
