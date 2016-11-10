@@ -1,6 +1,6 @@
 SUBDIRS = qsolv input output formatting validation qs includes
 CLEAN = make clean
-test = make test
+TEST = make test
 OUTPUT = output/output.o
 INPUT = input/input.o
 FORMAT = formatting/formatting.o
