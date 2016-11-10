@@ -1,5 +1,6 @@
-SUBDIRS = qsolv input output formatting validation qs
+SUBDIRS = qsolv input output formatting validation qs includes
 CLEAN = make clean
+test = make test
 OUTPUT = output/output.o
 INPUT = input/input.o
 FORMAT = formatting/formatting.o
@@ -19,4 +20,9 @@ all:
 clean:
 	for dir in $(SUBDIRS); do \
 		$(CLEAN) -C $$dir; \
+	done
+
+test:
+	for dir in $(SUBDIRS); do \
+		$(TEST) -C $$dir; \
 	done

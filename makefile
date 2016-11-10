@@ -2,6 +2,7 @@
 
 MAKE = make all
 CLEAN = make clean
+TEST = make test
 SUBDIRS = src
 INSDIR = install
 INS = install/qsolver
@@ -31,3 +32,7 @@ clean:
 	for dir in $(SUBDIRS); do \
 		$(CLEAN) -C $$dir; \
 	done
+
+test:
+	for dir in $(SUBDIRS); do \
+		$(MAKE)
