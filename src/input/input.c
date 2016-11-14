@@ -27,12 +27,17 @@ takeInputs(char* readin)
 	memset(strC, ' ', 256/3);
 	memset(strValidate, ' ', 256/3);
 
+	printf("%s\n", strValidate);
+
 	sscanf(readin, "%s %s %s %s", strA, strB, strC, strValidate);
+
+	inputs.errorCode = 0;
 	
 	// More than 3 parameters given
 	 if (strValidate[0] != ' ') {
 	 	// Error
-		inputs.errorCode = -2;
+	 	printf("Too many arguments");
+		inputs.errorCode = -4;
 		return inputs;
 	 }
 
@@ -44,13 +49,13 @@ takeInputs(char* readin)
 
 	b = strtod(strB, &end);
 	if(validateInput(strB) != 0) {
-		inputs.errorCode = -1;
+		inputs.errorCode = -2;
 		return inputs;
 	}
 
 	c = strtod(strC, &end);
 	if(validateInput(strC) != 0) {
-		inputs.errorCode = -1;
+		inputs.errorCode = -3;
 		return inputs;
 	}
 

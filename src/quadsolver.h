@@ -13,6 +13,13 @@ typedef struct digits {
 	int a;
 	int b;
 	int c;
+	/*
+	* Error Codes: 
+	* -1 - a is bad
+	* -2 - b is bad
+	* -3 - c is bad
+	* -4 - too many arguments
+	**/
 	int errorCode;
 } qInputs;
 
