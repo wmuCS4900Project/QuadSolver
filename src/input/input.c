@@ -1,4 +1,4 @@
-#include "../quadsolver.h"
+#include "../includes/quadsolver.h"
 
 /*
  takeInputs function is called in main. It gains input from 
@@ -27,72 +27,42 @@ takeInputs(char* readin)
 	memset(strC, ' ', 256/3);
 	memset(strValidate, ' ', 256/3);
 
+	printf("%s\n", strValidate);
+
 	sscanf(readin, "%s %s %s %s", strA, strB, strC, strValidate);
+
+	inputs.errorCode = 0;
 	
 	// More than 3 parameters given
 	 if (strValidate[0] != ' ') {
 	 	// Error
-		inputs.errorCode = -2;
+		inputs.errorCode = -5;
 		return inputs;
 	 }
 
 	a = strtod(strA, &end);
 	if(validateInput(strA) != 0) {
-		inputs.errorCode = -1;
+		inputs.errorCode = -6;
 		return inputs;
 	}
 
 	b = strtod(strB, &end);
 	if(validateInput(strB) != 0) {
-		inputs.errorCode = -1;
+		inputs.errorCode = -7;
 		return inputs;
 	}
 
 	c = strtod(strC, &end);
 	if(validateInput(strC) != 0) {
-		inputs.errorCode = -1;
+		inputs.errorCode = -8;
 		return inputs;
 	}
 
 	inputs.a = a;
 	inputs.b = b;
 	inputs.c = c;
+	inputs.errorCode = 0;
 
 	// Return to main to run qsolv
 	return inputs;
 }
-
-/*
- May not use this function -- just use redirection instead. 
-*/
-
-// int 
-// runFile(char * fname)
-// {
-// 	FILE * fp;
-    
-// 	if(!(fp = fopen(fname,"r"))) return -1;
-	
-// 	char * token;
-// 	float a, b, c;
-// 	char readin[256];
-
-// 	while(fgets(readin,sizeof(readin),fp))
-//     {
-// 		token = strtok(readin," ");
-// 		a = atof(token);
-// 		token = strtok(NULL," ");
-// 		b = atof(token);
-// 		token = strtok(NULL," ");
-// 		c = atof(token);
-
-// 		printf("found %5.5f %5.5f %5.5f \n",a,b,c);
-//         //call validate(? may be moved to main)
-//         //call qsolv(? may be moved to main)
-// 	}
-
-// 	fclose(fp);
-
-// 	return 0;
-
-// }
