@@ -1,8 +1,9 @@
 #include "../../cunit/cunit.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "../quadsolver.h"
+#include "../includes/quadsolver.h"
+
+
+int testnum;
+int outputAnswer(char * out);
 	
 int main(int argc, char * argv[]){
 
@@ -13,7 +14,7 @@ int main(int argc, char * argv[]){
 	printf("Testing %s\n",test1);
 	qInputs in1 = takeInputs(test1);
 
-	assert_eq("T1: errorCode", in1.errorCode, -3);
+	assert_eq("T1: errorCode", in1.errorCode, -8);
 
 
 	// First wrong
@@ -21,7 +22,7 @@ int main(int argc, char * argv[]){
 	printf("Testing %s\n",test2);
 	qInputs in2 = takeInputs(test2);
 
-	assert_eq("T2: errorCode", in2.errorCode, -1);
+	assert_eq("T2: errorCode", in2.errorCode, -6);
 
 
 	// Second wrong
@@ -29,7 +30,7 @@ int main(int argc, char * argv[]){
 	printf("Testing %s\n",test3);
 	qInputs in3 = takeInputs(test3);
 
-	assert_eq("T3: errorCode", in3.errorCode, -2);
+	assert_eq("T3: errorCode", in3.errorCode, -7);
 
 
 	// Third wrong
@@ -45,7 +46,7 @@ int main(int argc, char * argv[]){
 	printf("Testing %s\n",test5);
 	qInputs in5 = takeInputs(test5);
 
-	assert_eq("T5: errorCode", in5.errorCode, -4);
+	assert_eq("T5: errorCode", in5.errorCode, -5);
 
 	// All Right
 	char * test6 = "3 43.4 4378978977889";
@@ -53,6 +54,37 @@ int main(int argc, char * argv[]){
 	qInputs in6 = takeInputs(test6);
 
 	assert_eq("T6: errorCode", in6.errorCode, 0);
+
+}
+
+int 
+validateInput(char* numAsString) {
+	char* end;
+	double num = strtod(numAsString, &end);
+	int valid = 0;
+
+	if( end == numAsString || validateDigits(numAsString) != 0) {
+		//printf("%s Is not a valid number\n", numAsString );
+		return -1;
+	} 
+	return 0;
+
+}
+
+int 
+validateDigits(char* strDigits) {
+	//for(int i=0; i <= sizeof(strDigits); i++) {
+	int i = 0;
+	while(strDigits[i] != '\0'){
+		//printf("%c\n", strDigits[i]);
+		//printf("%d\n",i);
+		if (strDigits[i] == ' ')
+			return 0;
+		if (isdigit(strDigits[i]) == 0 && strDigits[i] != '.' && strDigits[i] != '\0') {
+			return -1;
+		}
+		i++;
+	}
 
 	return 0;
 }
