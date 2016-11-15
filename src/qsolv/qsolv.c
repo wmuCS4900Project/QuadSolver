@@ -1,13 +1,10 @@
 #include <stdio.h>
 #include <math.h>
-#include "../../quadsolver.h"
+#include "../quadsolver.h"
  
-int main(){
-  float a,b,c;
-  a = 1;
-  b = 2; 
-  c = 1;
-  float d,root1,root2; 
+qsStruct qsolve(double a, double b, double c)
+{
+  double d,root1,root2; 
 
   qsStruct results;
 
@@ -18,33 +15,46 @@ int main(){
   d = getDeterminant(results);
      
   if(d < 0){
-    printf("Roots are complex number.\n");
- 
-    printf("Roots of quadratic equation are: ");
-    printf("%.3f%+.3fi",-b/(2*a),sqrt(-d)/(2*a));
-    printf(", %.3f%+.3fi",-b/(2*a),-sqrt(-d)/(2*a));
-  
-    return 0; 
+  // no real roots
+    results.rootCount = 0;
+   return results; 
   }
   else if(d==0){
-   printf("Both roots are equal.\n");
+   // One root, multiplicity two
+   results.root1 = solve1Root(a, b );
+   results.rootCount = 1;
  
-   root1 = -b /(2* a);
-   printf("Root of quadratic equation is: %.3f ",root1);
- 
-   return 0;
+   return results;
   }
   else{
-   printf("Roots are real numbers.\n");
-  
-   root1 = ( -b + sqrt(d)) / (2* a);
-   root2 = ( -b - sqrt(d)) / (2* a);
-   printf("Roots of quadratic equation are: %.3f , %.3f",root1,root2);
+   float* roots = solve2Roots(a, b, d);
+   results.root1 = roots[0];
+   results.root2 = roots[1];
+   results.rootCount = 2;
   }
  
-  return 0;
+ return results;
 }
 
-getDeterminant(qsStruct inputs) {
-    float d = inputs.b * inputs.b - 4 * inputs.a * inputs.c;
+double getDeterminant(qsStruct inputs) {
+    double d = inputs.b * inputs.b - 4 * inputs.a * inputs.c;
+    return d;
+}
+
+float solve1Root(double a, double b) {
+  float root1 = -b /(2* a);
+
+  return root1;
+}
+
+float* solve2Roots(double a, double b, double det) {
+  float root1, root2;
+  static float roots[2];
+
+  root1 = ( -b + sqrt(det)) / (2* a);
+  root2 = ( -b - sqrt(det)) / (2* a);
+
+  roots[0] = root1;
+  roots[1] = root2;
+  return roots;
 }

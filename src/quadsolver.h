@@ -4,7 +4,17 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+
 #include "./includes/qsstruct.h"
+
+/**
+* Qsolve functions 
+**/
+qsStruct qsolve(double a, double b, double c);
+double getDeterminant(qsStruct inputs);
+float solve1Root(double a, double b);
+float* solve2Roots(double a, double b, double det);
 
 /*
 * Struct that holds the inputs
