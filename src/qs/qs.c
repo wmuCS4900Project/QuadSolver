@@ -31,8 +31,8 @@ main(int argc, char * argv[])
 
 		// We're good
 		else {
-			printf("Running qusolve for a=%d, b=%d, c=%d", input.a, input.b, input.c);
-			//qsolve(input.a, input.b, input.c);
+			//printf("Running qusolve for a=%d, b=%d, c=%d", input.a, input.b, input.c);
+			qsolve(input.a, input.b, input.c);
 
 			// End-- run loop again
 			printf("Please enter a,b, and c separated by spaces\n (i.e., <a> <b> <c>) or \"q\" to quit\n");
