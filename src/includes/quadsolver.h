@@ -5,17 +5,29 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include "qsstruct.h"
 
 /*
 * Struct that holds the inputs
 **/
 typedef struct digits {
-	int a;
-	int b;
-	int c;
+	double a;
+	double b;
+	double c;
 	int errorCode;
 } qInputs;
+
+/*
+* Struct that is passed between functions after input
+*/
+typedef struct
+qsStructTag{
+	float a;
+	float b;
+	float c;
+	double root1;
+	double root2;
+	int rootCount;
+} qsStruct;
 
 /*
  takeInputs function is called in main. It gains input from 
