@@ -5,16 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-
-#include "./includes/qsstruct.h"
-
-/**
-* Qsolve functions 
-**/
-qsStruct qsolve(double a, double b, double c);
-double getDeterminant(qsStruct inputs);
-float solve1Root(double a, double b);
-float* solve2Roots(double a, double b, double det);
+#include "qsstruct.h"
 
 /*
 * Struct that holds the inputs
@@ -23,13 +14,6 @@ typedef struct digits {
 	int a;
 	int b;
 	int c;
-	/*
-	* Error Codes: 
-	* -1 - a is bad
-	* -2 - b is bad
-	* -3 - c is bad
-	* -4 - too many arguments
-	**/
 	int errorCode;
 } qInputs;
 
@@ -58,3 +42,11 @@ int validateDigits(char* strDigits);
 * converted to a double
 **/
 int validateInput(char* numAsString);
+
+/*
+* This function is called from main.
+* It takes the answer struct and formats it for output,
+* and then calls the output function, passing the formatted string along
+* It returns a 0 if everything works properly, a -1 otherwise.
+*/
+int formatAnswer(qsStruct * ans);

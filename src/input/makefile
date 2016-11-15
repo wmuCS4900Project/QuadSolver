@@ -16,3 +16,4 @@ testrun:
 
 debug:
 	gcc -std=c99 -g test.c $(FILE) $(CUNIT) -lm
+

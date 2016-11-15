@@ -4,39 +4,56 @@
 
 int testnum;
 int outputAnswer(char * out);
-
 	
 int main(int argc, char * argv[]){
 
 	cunit_init();
-	qInputs ret;
-	char * s;
 
-//test 1
-	s = "4.0 5.5 6.0";
-	ret = takeInputs(s);
-	assert_eq("input1",ret.errorCode,0);
+	// All wrong
+	char * test1 = "42300412432 43214235324 FaFererER";
+	printf("Testing %s\n",test1);
+	qInputs in1 = takeInputs(test1);
 
-//test 2
-	s = "4.5 f.5 7.6";
-	ret = takeInputs(s);
-	assert_eq("input2",ret.errorCode,-7);
+	assert_eq("T1: errorCode", in1.errorCode, -8);
 
-//test 3
-	s = "0 5.5 1 2432";
-	ret = takeInputs(s);
-	assert_eq("input2",ret.errorCode,-5);
 
-//test 4
-	s = "4.5 5.5 7.f6";
-	ret = takeInputs(s);
-	assert_eq("input2",ret.errorCode,-8);
+	// First wrong
+	char * test2 = "jk 43.4 4378978977889";
+	printf("Testing %s\n",test2);
+	qInputs in2 = takeInputs(test2);
 
-//test 5
-	s = "4.& 5.5 7.6";
-	ret = takeInputs(s);
-	assert_eq("input2",ret.errorCode,-6);
+	assert_eq("T2: errorCode", in2.errorCode, -6);
 
+
+	// Second wrong
+	char * test3 = "2345.4 434e.4 7433.54";
+	printf("Testing %s\n",test3);
+	qInputs in3 = takeInputs(test3);
+
+	assert_eq("T3: errorCode", in3.errorCode, -7);
+
+
+	// Third wrong
+	char * test4 = "0.0 43.4 43789758977889";
+	printf("Testing %s\n",test4);
+	qInputs in4 = takeInputs(test4);
+
+	assert_eq("T4: errorCode", in4.errorCode, 0);
+
+
+	// All Right, too many parameters
+	char * test5 = "3 43.4 4378978977889 4";
+	printf("Testing %s\n",test5);
+	qInputs in5 = takeInputs(test5);
+
+	assert_eq("T5: errorCode", in5.errorCode, -5);
+
+	// All Right
+	char * test6 = "3 43.4 4378978977889";
+	printf("Testing %s\n",test6);
+	qInputs in6 = takeInputs(test6);
+
+	assert_eq("T6: errorCode", in6.errorCode, 0);
 
 }
 
@@ -68,5 +85,6 @@ validateDigits(char* strDigits) {
 		}
 		i++;
 	}
+
 	return 0;
 }
