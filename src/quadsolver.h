@@ -4,6 +4,17 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
+#include "./includes/qsstruct.h"
+
+/*
+* Struct that holds the inputs
+**/
+typedef struct digits {
+	int a;
+	int b;
+	int c;
+	int errorCode;
+} qInputs;
 
 /*
  takeInputs function is called in main. It gains input from 
@@ -12,7 +23,7 @@
  by an outside function. Once validated the float will be 
  send to qsolv.
  */
-int takeInputs();
+qInputs takeInputs(char* readin);
 
 //int runFile(char * fname);
 char *remove_newline(char *s);
