@@ -2,48 +2,47 @@
 #include <math.h>
 #include "../quadsolver.h"
  
-qsStruct qsolve(double a, double b, double c)
+int qsolv(qsStruct *results)
 {
   double d,root1,root2; 
-
-  qsStruct results;
-
-  results.a = a;
-  results.b = b;
-  results.c = c;
 
   d = getDeterminant(results);
      
   if(d < 0){
-  // no real roots
-    results.rootCount = 0;
-   return results; 
+    // no real roots
+    results->rootCount = -9;
+    return 0; 
   }
+
+  else if (isinf(d)) {
+    results->rootCount = -10;
+  }
+
   else if(d==0){
    // One root, multiplicity two
-   results.root1 = solve1Root(a, b );
-   results.rootCount = 1;
+   results->root1 = solve1Root(results->a, results->b );
+   results->rootCount = 1;
  
-   return results;
+   return 0;
   }
+
   else{
-   float* roots = solve2Roots(a, b, d);
-   results.root1 = roots[0];
-   results.root2 = roots[1];
-   results.rootCount = 2;
+   float* roots = solve2Roots(results->a, results->b, d);
+   results->root1 = roots[0];
+   results->root2 = roots[1];
+   results->rootCount = 2;
   }
  
- return results;
+ return 0;
 }
 
-double getDeterminant(qsStruct inputs) {
-    double d = inputs.b * inputs.b - 4 * inputs.a * inputs.c;
+double getDeterminant(qsStruct *inputs) {
+    double d = inputs->b * inputs->b - 4 * inputs->a * inputs->c;
     return d;
 }
 
 float solve1Root(double a, double b) {
   float root1 = -b /(2* a);
-
   return root1;
 }
 

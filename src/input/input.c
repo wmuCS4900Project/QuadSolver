@@ -45,6 +45,11 @@ takeInputs(char* readin)
 		inputs.errorCode = -6;
 		return inputs;
 	}
+	if(a == 0) {
+		// Not a quadratic
+		inputs.errorCode = -4;
+		return inputs;
+	}
 
 	b = strtod(strB, &end);
 	if(validateInput(strB) != 0) {
