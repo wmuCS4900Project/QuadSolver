@@ -11,8 +11,8 @@
 /**
 * Qsolve functions 
 **/
-qsStruct qsolve(double a, double b, double c);
-double getDeterminant(qsStruct inputs);
+int qsolv(qsStruct *results);
+double getDeterminant(qsStruct *inputs);
 float solve1Root(double a, double b);
 float* solve2Roots(double a, double b, double det);
 

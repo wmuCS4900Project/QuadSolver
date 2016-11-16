@@ -52,7 +52,7 @@ loop(){
 	q.c = input.c;
 
 	//run Qsolv
-	ret = qssolv(&q);
+	ret = qsolv(&q);
 	if(ret != 0){
 		// Raise error
 		// Output should handle error code

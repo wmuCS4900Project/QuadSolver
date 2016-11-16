@@ -11,9 +11,9 @@
 * Struct that holds the inputs
 **/
 typedef struct digits {
-	int a;
-	int b;
-	int c;
+	double a;
+	double b;
+	double c;
 	int errorCode;
 } qInputs;
 
