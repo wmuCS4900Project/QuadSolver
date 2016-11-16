@@ -1,1 +1,1 @@
-This is where output files land.
+Output.c is responsible for sending any error codes and other output to a file, and reporting errors as the program runs.

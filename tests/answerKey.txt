@@ -1,0 +1,51 @@
+Please enter a,b, and c separated by spaces
+ (i.e., <a> <b> <c>) or "q" to quit
+                                                                                     
+Running qsolve for a=4.000000, b=5.000000, c=6.000000
+Determinant is < 0, no roots.
+Please enter a,b, and c separated by spaces
+ (i.e., <a> <b> <c>) or "q" to quit
+                                                                                     
+Running qsolve for a=7.500000, b=12.000000, c=514.000000
+Determinant is < 0, no roots.
+Please enter a,b, and c separated by spaces
+ (i.e., <a> <b> <c>) or "q" to quit
+                                                                                     
+fdf Is not a valid number
+Variable a is badly formatted. Please enter as 0000.0000.
+Please enter a,b, and c separated by spaces
+ (i.e., <a> <b> <c>) or "q" to quit
+                                                                                     
+gdg Is not a valid number
+Variable b is badly formatted. Please enter as 0000.0000.
+Please enter a,b, and c separated by spaces
+ (i.e., <a> <b> <c>) or "q" to quit
+                                                                                     
+fefre Is not a valid number
+Variable c is badly formatted. Please enter as 0000.0000.
+Please enter a,b, and c separated by spaces
+ (i.e., <a> <b> <c>) or "q" to quit
+                                                                                     
+Too many arguments, please enter 3 arguments.
+Please enter a,b, and c separated by spaces
+ (i.e., <a> <b> <c>) or "q" to quit
+                                                                                     
+Running qsolve for a=1231.000000, b=553.534000, c=63434.000000
+Determinant is < 0, no roots.
+Please enter a,b, and c separated by spaces
+ (i.e., <a> <b> <c>) or "q" to quit
+                                                                                     
+Running qsolve for a=1020.000000, b=23.412000, c=0.535230
+Determinant is < 0, no roots.
+Please enter a,b, and c separated by spaces
+ (i.e., <a> <b> <c>) or "q" to quit
+                                                                                     
+Too few arguments, please enter 3 arguments.
+Please enter a,b, and c separated by spaces
+ (i.e., <a> <b> <c>) or "q" to quit
+                                                                                     
+Running qsolve for a=512412312515214326894265344664594742983944112294603744886186393470847707109619096946268207657394660647297351680.000000, b=123123213213123.000000, c=5.000000
+Determinant is < 0, no roots.
+Please enter a,b, and c separated by spaces
+ (i.e., <a> <b> <c>) or "q" to quit
+Quitting...

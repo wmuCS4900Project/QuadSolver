@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../quadsolver.h"
+#include "../includes/quadsolver.h"
 	
-int main( ) {
+int main(int argc, char * argv[]) {
 	cunit_init();
 
 	qsStruct q;

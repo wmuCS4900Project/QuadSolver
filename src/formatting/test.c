@@ -1,8 +1,5 @@
 #include "../../cunit/cunit.h"
-#include "../includes/qsstruct.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "../includes/quadsolver.h"
 
 
 int testnum;
@@ -36,7 +33,7 @@ int main(int argc, char * argv[]){
 	q2->root2 = 7.999938;
 	q2->rootCount = 2;
 	int ret2 = formatAnswer(q2);
-	assert_eq("ret",ret2,0);
+	assert_eq("ret2",ret2,0);
 	free(q2);
 
 
@@ -47,9 +44,9 @@ int outputAnswer(char * out){
 	if(testnum == 1){
 		char * str = malloc(sizeof(char) * 100);
 		strcpy(str,"The quadratic equation with values a =  3.00, b =  4.00, and c =  5.00 has two roots. Root 1 = 6.00000, Root 2 = 7.00000.\n");
-		printf("Comparing the following two strings: \n");
-		puts(str);
-		puts(out);
+		//printf("Comparing the following two strings: \n");
+		//puts(str);
+		//puts(out);
 		int ret = strcmp(str,out);
 		assert_eq("in",ret,0);
 		return 0;
@@ -58,9 +55,9 @@ int outputAnswer(char * out){
 	if(testnum == 2){
 		char * str = malloc(sizeof(char) * 100);
 		strcpy(str,"The quadratic equation with values a = 45.00, b = 22.55, and c =  5.01 has two roots. Root 1 = 62.02222, Root 2 = 7.99994.\n");
-		printf("Comparing the following two strings: \n");
-		puts(str);
-		puts(out);
+		//printf("Comparing the following two strings: \n");
+		//puts(str);
+		//puts(out);
 		int ret = strcmp(str,out);
 		assert_eq("in",ret,0);
 		return 0;

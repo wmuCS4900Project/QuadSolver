@@ -11,9 +11,9 @@
 */
 typedef struct
 qsStructTag{
-	float a;
-	float b;
-	float c;
+	double a;
+	double b;
+	double c;
 	double root1;
 	double root2;
 	int rootCount;
@@ -28,8 +28,8 @@ int erlog(char * msg);
 **/
 int qsolv(qsStruct *results);
 double getDeterminant(qsStruct *inputs);
-float solve1Root(double a, double b);
-float* solve2Roots(double a, double b, double det);
+double solve1Root(double a, double b);
+double* solve2Roots(double a, double b, double det);
 /*
 * Struct that holds the inputs
 **/

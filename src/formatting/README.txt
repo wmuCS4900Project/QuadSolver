@@ -1,0 +1,1 @@
+formatting.c is responsible for creating a string to send to output using the answers received back from qsolv.c

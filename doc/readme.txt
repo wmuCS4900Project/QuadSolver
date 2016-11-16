@@ -1,4 +1,3 @@
-
 Description
 ---------------
 Quadsolver is a command line program for solving quadratic equations in the form of ax^2 + bx + c = 0, where a, b, and c are unknown.
@@ -8,6 +7,14 @@ Installation
 --------------
 This is installed by make via the command line.
 
+
+Commands
+---------
+make all: builds all object files required to install
+make deploy: installs to the INSTALL folder
+make clean: removes all unnecessary objects after installation
+make test: runs unit tests
+make testfull: runs production tests
 
 Use
 -----
@@ -24,6 +31,7 @@ Why is the documentation so bad?
 	Well that’s a bit rude. Have you seen our awesome FAQ?
 What coding standard was used for this project?
 	GNU's C stanard, found at https://www.gnu.org/prep/standards/html_node/index.html#SEC_Contents
+
 
 Versions
 --------
