@@ -1,10 +1,12 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "../includes/qsstruct.h"
+#include "../includes/quadsolver.h"
 
 int formatAnswer(qsStruct * ans);
 
+
+/*This function is called from main.
+It takes the answer struct and formats it for output,
+and then calls the output function, passing the formatted string along
+It returns a 0 if everything works properly, a -1 otherwise.*/
 int 
 formatAnswer(qsStruct * ans){
 

@@ -3,8 +3,6 @@ in order to solve the quadratic equation. Inputs are taken in float form and
 calculated using double precision to IEEE standard.*/
 #include "../quadsolver.h"
 
-
-
 int 
 main(int argc, char * argv[])
 {
@@ -61,6 +59,10 @@ loop(){
 	}
 
 	//format and output results
+	if(q.rootCount <= 0){
+		outputErrorVal(q.rootCount);
+	}
+
 	ret = formatting(&q);
 	if(ret != 0){
 		// Raise error
