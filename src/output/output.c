@@ -1,9 +1,5 @@
-#include "../quadsolver.h"
+#include "../includes/quadsolver.h"
 #include <unistd.h>
-
-int outputErrorVal(int val);
-int outputAnswer(char * out);
-int erlog(char * msg);
 
 int
 outputErrorVal(int val){
@@ -32,10 +28,11 @@ outputErrorVal(int val){
 		case -9:
 			printf("Determinant is < 0, no roots.\n");
 			erlog("Determinant is < 0, no roots.\n");
-			break
+			break;
 		
 	}
 
+	return 0;
 }
 
 int
@@ -57,4 +54,5 @@ int erlog(char * msg){
 		exit(0);
 	}
 
+	return 0;
 }

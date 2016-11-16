@@ -4,8 +4,8 @@ MAKE = make all
 CLEAN = make clean
 TEST = make test
 SUBDIRS = src
-INSDIR = install
-INS = install/qsolver
+#INSDIR = install
+#INS = install/qsolver
 OUTPUT = src/output/output.o
 INPUT = src/input/input.o
 FORMAT = src/formatting/formatting.o
@@ -17,7 +17,7 @@ RM = rm
 #first command runs if make called alone
 
 deploy: all
-	gcc -g -o $(INS) $(QS) $(QSOLV) $(VALID) $(FORMAT) $(INPUT) $(OUTPUT)
+	gcc -g -o $(QS) $(QSOLV) $(VALID) $(FORMAT) $(INPUT) $(OUTPUT)
 
 all:
 	for dir in $(SUBDIRS); do \

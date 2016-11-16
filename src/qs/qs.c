@@ -1,7 +1,7 @@
 /* This program will read floats from command line inputs or read from a file
 in order to solve the quadratic equation. Inputs are taken in float form and 
 calculated using double precision to IEEE standard.*/
-#include "../quadsolver.h"
+#include "../includes/quadsolver.h"
 
 int 
 main(int argc, char * argv[])

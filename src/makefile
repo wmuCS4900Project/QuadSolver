@@ -1,4 +1,4 @@
-SUBDIRS = qsolv input output formatting validation qs includes
+SUBDIRS = qsolv input output formatting validation qs
 CLEAN = make clean
 TEST = make test
 OUTPUT = output/output.o
@@ -12,7 +12,8 @@ VALID = validation/validation.o
 test:
 	for dir in $(SUBDIRS); do \
 		$(TEST) -C $$dir; \
-	donemain:
+
+donemain:
 	gcc -g -o qsolver $(QS) $(QSOLV) $(VALID) $(FORMAT) $(INPUT) $(OUTPUT)
 
 all:
