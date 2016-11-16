@@ -12,7 +12,8 @@ FORMAT = src/formatting/formatting.o
 QSOLV = src/qsolv/qsolv.o
 QS = src/qs/qs.o
 VALID = src/validation/validation.o
-TESTFULL = make testfull
+TESTDIR = tests
+TESTFULL = make
 RM = rm
 
 #first command runs if make called alone
@@ -41,4 +42,7 @@ test:
 		$(TEST) -C $$dir; \
 	done
 
-testfull:
+testfull: deploy
+	for dir in $(TESTDIR); do \
+		$(TESTFULL) -C $$dir; \
+	done
