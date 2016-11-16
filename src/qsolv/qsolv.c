@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include "../quadsolver.h"
+#include "../includes/quadsolver.h"
  
 int qsolv(qsStruct *results)
 {
