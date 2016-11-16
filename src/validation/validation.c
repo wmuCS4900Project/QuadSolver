@@ -1,4 +1,4 @@
-#include "../quadsolver.h"
+#include "../includes/quadsolver.h"
 
 /*
 * Validate that the input is actually a float. 
