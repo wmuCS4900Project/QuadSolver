@@ -1,0 +1,8 @@
+Enter three floats as a, b and c.Read in 4.5523 624.342 9.0 with 18 chars
+Found 4.5523
+Found 624.342
+Found 9.0
+Found z 4.552300
+Found 4.552300 624.341980 9.000000 
+Retval is 0
+Found 4.552300 624.341980 9.000000 

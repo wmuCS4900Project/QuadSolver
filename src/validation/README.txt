@@ -1,0 +1,1 @@
+Validation is responsible for making sure the input variables are in the correct format, and report if they are not and in what way.

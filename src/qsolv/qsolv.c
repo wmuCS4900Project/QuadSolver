@@ -1,7 +1,7 @@
-#include <stdio.h>
 #include <math.h>
 #include "../includes/quadsolver.h"
- 
+
+
 int qsolv(qsStruct *results)
 {
   double d,root1,root2; 
@@ -27,7 +27,7 @@ int qsolv(qsStruct *results)
   }
 
   else{
-   float* roots = solve2Roots(results->a, results->b, d);
+   double* roots = solve2Roots(results->a, results->b, d);
    results->root1 = roots[0];
    results->root2 = roots[1];
    results->rootCount = 2;
@@ -41,14 +41,14 @@ double getDeterminant(qsStruct *inputs) {
     return d;
 }
 
-float solve1Root(double a, double b) {
-  float root1 = -b /(2* a);
+double solve1Root(double a, double b) {
+  double root1 = -b /(2* a);
   return root1;
 }
 
-float* solve2Roots(double a, double b, double det) {
-  float root1, root2;
-  static float roots[2];
+double* solve2Roots(double a, double b, double det) {
+  double root1, root2;
+  static double roots[2];
 
   root1 = ( -b + sqrt(det)) / (2* a);
   root2 = ( -b - sqrt(det)) / (2* a);

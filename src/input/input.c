@@ -30,9 +30,14 @@ takeInputs(char* readin)
 	printf("%s\n", strValidate);
 
 	sscanf(readin, "%s %s %s %s", strA, strB, strC, strValidate);
-
-	inputs.errorCode = 0;
 	
+
+
+	if(strC[0] == ' ' || strB[0] == ' ' || strA[0] == ' '){
+		inputs.errorCode = -3;
+		return inputs;
+	}
+
 	// More than 3 parameters given
 	 if (strValidate[0] != ' ') {
 	 	// Error

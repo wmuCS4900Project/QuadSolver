@@ -1,0 +1,1 @@
+Quadsolver.h is the only file that needs to be included across the board. It includes all commonly used header files in it (of which there are only a few) and defines two custom structs used by the program, qInputs and qsStruct.

@@ -25,10 +25,10 @@ loop(){
 
 	printf("Please enter a,b, and c separated by spaces\n (i.e., <a> <b> <c>) or \"q\" to quit\n");
 	//Inputs from command line
-	fgets(readin,sizeof(readin), stdin))
+	fgets(readin,sizeof(readin), stdin);
 
 	// Quit command
-	if(strA[0] == 'q' ) {
+	if(readin[0] == 'q' ) {
 		printf("Quitting...\n");
 		return 1;
 	}
@@ -38,12 +38,12 @@ loop(){
 	if (input.errorCode != 0) {
 		// Raise error
 		// Output should handle error code
-		outputErrorVal(input->errorCode);
+		outputErrorVal(input.errorCode);
 		return 0; 
 	}
 	
 	//No error? good
-	printf("Running qsolve for a=%d, b=%d, c=%d", input.a, input.b, input.c);
+	printf("Running qsolve for a=%lf, b=%lf, c=%lf\n", input.a, input.b, input.c);
 	
 	q.a = input.a;
 	q.b = input.b;
@@ -54,7 +54,7 @@ loop(){
 	if(ret != 0){
 		// Raise error
 		// Output should handle error code
-		outputErrorVal(input->errorCode);
+		outputErrorVal(input.errorCode);
 		return 0; 
 	}
 
@@ -63,11 +63,11 @@ loop(){
 		outputErrorVal(q.rootCount);
 	}
 
-	ret = formatting(&q);
+	ret = formatAnswer(&q);
 	if(ret != 0){
 		// Raise error
 		// Output should handle error code
-		outputErrorVal(input->errorCode);
+		outputErrorVal(input.errorCode);
 		return 0; 
 	}
 

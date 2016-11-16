@@ -1,0 +1,86 @@
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Variable a is badly formatted. Please enter as 0000.0000.
+Variable b is badly formatted. Please enter as 0000.0000.
+Variable c is badly formatted. Please enter as 0000.0000.
+Too many arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Too few arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Variable a is badly formatted. Please enter as 0000.0000.
+Variable b is badly formatted. Please enter as 0000.0000.
+Variable c is badly formatted. Please enter as 0000.0000.
+Too many arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Too few arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Variable a is badly formatted. Please enter as 0000.0000.
+Variable b is badly formatted. Please enter as 0000.0000.
+Variable c is badly formatted. Please enter as 0000.0000.
+Too many arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Too few arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Variable a is badly formatted. Please enter as 0000.0000.
+Variable b is badly formatted. Please enter as 0000.0000.
+Variable c is badly formatted. Please enter as 0000.0000.
+Too many arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Too few arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Variable a is badly formatted. Please enter as 0000.0000.
+Variable b is badly formatted. Please enter as 0000.0000.
+Variable c is badly formatted. Please enter as 0000.0000.
+Too many arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Too few arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Variable a is badly formatted. Please enter as 0000.0000.
+Variable b is badly formatted. Please enter as 0000.0000.
+Variable c is badly formatted. Please enter as 0000.0000.
+Too many arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Too few arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Variable a is badly formatted. Please enter as 0000.0000.
+Variable b is badly formatted. Please enter as 0000.0000.
+Variable c is badly formatted. Please enter as 0000.0000.
+Too many arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Too few arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Variable a is badly formatted. Please enter as 0000.0000.
+Variable b is badly formatted. Please enter as 0000.0000.
+Variable c is badly formatted. Please enter as 0000.0000.
+Too many arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Too few arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Variable a is badly formatted. Please enter as 0000.0000.
+Variable b is badly formatted. Please enter as 0000.0000.
+Variable c is badly formatted. Please enter as 0000.0000.
+Too many arguments, please enter 3 arguments.
+Determinant is < 0, no roots.
+Determinant is < 0, no roots.
+Too few arguments, please enter 3 arguments.
+Determinant is < 0, no roots.

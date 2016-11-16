@@ -30,10 +30,10 @@ validateDigits(char* strDigits) {
 	int i = 0;
 	while(strDigits[i] != '\0'){
 		//printf("%c\n", strDigits[i]);
-		printf("%d\n",i);
+		//printf("%d\n",i);
 		if (strDigits[i] == ' ')
 			return 0;
-		if (isdigit(strDigits[i]) == 0 && strDigits[i] != '.' && strDigits[i] != '\0') {
+		if (isdigit(strDigits[i]) == 0 && strDigits[i] != '.'  && strDigits[i] != '-' && strDigits[i] != '\0') {
 			return -1;
 		}
 		i++;
