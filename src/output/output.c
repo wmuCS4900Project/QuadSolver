@@ -1,25 +1,39 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "../quadsolver.h"
 #include <unistd.h>
-#include "../includes/qsstruct.h"
 
-int outputErrorVal(int val, int loc);
+int outputErrorVal(int val);
 int outputAnswer(char * out);
-int erlog(char * msg, int loc);
+int erlog(char * msg);
 
 int
-outputErrorVal(int val, int loc){
+outputErrorVal(int val){
 
 	switch(val){
-		case 1:
-			printf("loss of precision\n");
-			erlog("loss of precision\n", loc);
-			quit();
+		case -4:
+			printf("A = 0, not a quadratic equation. A must not be 0.\n");
+			erlog("A = 0, not a quadratic equation. A must not be 0.\n");
 			break;
-		case 2:
-			printf("Not a quadratic equation");
-			quit();
+		case -5:
+			printf("Too few arguments, please enter 3 arguments.\n");
+			erlog("Too few arguments, please enter 3 arguments.\n");
 			break;
+		case -6:
+			printf("Variable a is badly formatted. Please enter as 0000.0000.\n");
+			erlog("Variable a is badly formatted. Please enter as 0000.0000.\n");
+			break;
+		case -7:
+			printf("Variable b is badly formatted. Please enter as 0000.0000.\n");
+			erlog("Variable b is badly formatted. Please enter as 0000.0000.\n");
+			break;
+		case -8:
+			printf("Variable c is badly formatted. Please enter as 0000.0000.\n");
+			erlog("Variable c is badly formatted. Please enter as 0000.0000.\n");
+			break;
+		case -9:
+			printf("Determinant is < 0, no roots.\n");
+			erlog("Determinant is < 0, no roots.\n");
+			break
+		
 	}
 
 }
@@ -33,7 +47,7 @@ outputAnswer(char * out){
 
 }
 
-int erlog(char * msg, int loc){
+int erlog(char * msg){
 
 	FILE * fp;
 	fp  = fopen("log.txt", "w+");
