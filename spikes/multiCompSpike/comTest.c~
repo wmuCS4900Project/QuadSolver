@@ -1,0 +1,16 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <pthread.h>
+int main()
+{
+
+system("./testThings r q 5 > testTxt.txt");
+
+system("./testThings 2 1 3 >> testTxt.txt");
+
+system("grep -v -F -x -f answerKey.txt testTxt.txt");
+
+printf("Test complete.\n");
+
+}
